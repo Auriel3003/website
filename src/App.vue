@@ -22,7 +22,7 @@
       <h2>About Me</h2>
       <div class="about-content">
         <div class="profile-image">
-          <img src="path/to/your/profile.jpg" alt="Sahil Sawant" class="profile-pic"> </div>
+          <img src="https://camo.githubusercontent.com/8e09105292eb650f1007af790c36b80b7630a82a98725d9439af599ca423f92d/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313335382f302a796761486d506a516e566d45417064542e676966" alt="Sahil Sawant" class="profile-pic"> </div>
         <div class="profile-text">
           <h3>Sahil Sawant</h3>
           <p class="tagline">Physics Enthusiast & Freelance Developer Specializing in Data Analysis and Web Solutions</p>
