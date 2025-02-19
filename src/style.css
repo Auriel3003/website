@@ -96,20 +96,58 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-#about { /* Target the about section specifically */
-  min-height: 400px; /* Set a minimum height */
-  display: flex; /* Use flexbox for vertical centering */
-  align-items: center; /* Vertically center content */
-  padding: 4rem 2rem; /* Increased padding for more space */
-  text-align: justify; /* Justify text */
+#about {
+  min-height: 500px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: left; /* Align text to the left */
 }
 
-#about p {
-  font-size: 1.2rem; /* slightly larger font for better readability */
-  line-height: 1.8; /* improved line height for better readability */
-  max-width: 800px; /* Limit paragraph width for better readability */
-  margin: 0 auto; /* Center the paragraph horizontally */
+.about-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  align-items: flex-start; /* Align items to the top */
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
+
+.profile-image {
+  width: 250px; /* Adjust profile image width */
+  margin-right: 2rem; /* Add some space to the right of the image */
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.profile-pic {
+  width: 100%;
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  display: block; /* Prevents image from creating extra space */
+}
+
+.profile-text {
+  flex-grow: 1; /* Allow text to take up available space */
+}
+
+.profile-text h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tagline {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.skills-overview {
+  margin-top: 2rem;
+}
+
+.skills-overview h4 {
+  font-size: 
 
 .project-grid {
   display: grid;
