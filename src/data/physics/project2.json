@@ -1,6 +1,7 @@
 {
-  "title": "Project 1",
-  "description": "Description of web development project 1.",
-  "reportLink": "/reports/web-dev/project1.pdf",  // Keep your report paths correct
-  "image": "/images/project1.jpg" // Keep your image paths correct
+  "title": "Astrophysics Data Analysis",
+  "description": "Analysis of astronomical data using specialized software.",
+  "reportLink": "/reports/physics/project2.pdf",
+  "image": "/images/physics/project2.png",
+  "category": "physics"
 }

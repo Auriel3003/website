@@ -1,6 +1,7 @@
 {
-  "title": "Project 1",
-  "description": "Description of web development project 1.",
-  "reportLink": "/reports/web-dev/project1.pdf",  // Keep your report paths correct
-  "image": "/images/project1.jpg" // Keep your image paths correct
+  "title": "Sales Data Analysis",
+  "description": "Analysis of sales data to identify trends and improve business strategies using Python.",
+  "reportLink": "/reports/data-analysis/project1.pdf",
+  "image": "/images/data-analysis/project1.gif",
+  "category": "data-analysis"
 }
