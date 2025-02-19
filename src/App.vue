@@ -13,13 +13,24 @@
       </nav>
     </header>
 
-
     <section id="about" class="main-slider-1 banner-overlay" :style="{ backgroundImage: `url('path/to/your/image.jpg')` }">
       <div class="container">
         <div class="text-center">
           <div class="slider-banner-info text-center">
             <h2 class="slider-banner-title">Hello, I’m <b>Sahil Sawant</b></h2>
             <h5 class="slider-banner-text">Physics Enthusiast & Freelance Developer</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="rounded-section">
+      <h2>Skills</h2>
+      <div class="skill-domain-container">
+        <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
+          <h3>{{ domain }}</h3>
+          <div class="skills-list">
+            <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
           </div>
         </div>
       </div>
@@ -48,11 +59,12 @@
 
     <section id="testimonials" class="rounded-section">
       <h2>Testimonials</h2>
-      <div v-for="testimonial in testimonials" :key="testimonial.id">
-        <p>"{{ testimonial.quote }}"</p>
-        <p>- {{ testimonial.author }}</p>
+      <div v-for="testimonial in testimonials" :key="testimonial.id" class="testimonial-item">
+        <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
+        <p class="testimonial-author">- {{ testimonial.author }}</p>
       </div>
     </section>
+
 
     <section id="contact" class="rounded-section">
       <h2>Contact Me</h2>
@@ -68,7 +80,7 @@
 </template>
 
 <script>
-import { ref, onMounted, computed } from 'vue'; // Import computed
+import { ref, onMounted, computed } from 'vue';
 import ProjectCard from './components/ProjectCard.vue';
 import loadProjects from './data/projects.js';
 
@@ -80,14 +92,26 @@ export default {
     const webDevProjects = ref([]);
     const dataAnalysisProjects = ref([]);
     const physicsProjects = ref([]);
-    const testimonials = ref([]);
+    const testimonials = ref([
+        {
+            id: 1,
+            quote: "Great work!",
+            author: "John Doe"
+        },
+        {
+            id: 2,
+            quote: "Excellent communication.",
+            author: "Jane Smith"
+        }
+    ]); // Sample testimonials data
+
     const skillSet = ref({
       'Web Development': ['Vue.js', 'React', 'Node.js', 'JavaScript', 'CSS', 'Tailwind CSS'],
       'Data Analysis': ['Python', 'Pandas', 'NumPy', 'SQL', 'Tableau'],
       'Physics': ['MATLAB', 'GNU Radio', 'Antenna Design', 'Simulations'],
     });
 
-    const currentRoute = ref(window.location.hash || '#about'); // Track current route
+    const currentRoute = ref(window.location.hash || '#about');
 
     onMounted(async () => {
       const projects = await loadProjects();
@@ -106,7 +130,7 @@ export default {
       physicsProjects,
       testimonials,
       skillSet,
-      currentRoute, // Expose currentRoute
+      currentRoute,
     };
   },
 };
