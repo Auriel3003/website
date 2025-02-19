@@ -136,20 +136,19 @@ section h2 {
     flex-wrap: wrap;
     justify-content: center; /* Center the domains horizontally */
     gap: 20px; /* Spacing between domain cards */
-    background-color: rgba(255, 255, 255, 0.2); /* 80% transparent white */
-    backdrop-filter: blur(5px); /* Add blur for a frosted glass effect */
-    border: 1px solid rgba(204, 204, 204, 0.5); 
   }
 
   .skill-domain {
     width: calc(33.33% - 20px); /* 3 domains per row with spacing; Adjust 20px if gap changes*/
     box-sizing: border-box; /* Include padding and border in width */
-    border: 1px solid #ccc;  /* Optional border for the domain card */
+    border: 1px solid rgba(204, 204, 204, 0.5); 
     padding: 20px; /* Add padding to domain card */
     border-radius: 10px; /* Round the corners of domain card */
     text-align: center; /* Center the domain name */
-    background-color: white; /* Give a background to domain card */
+    background-color: rgba(255, 255, 255, 0.2); /* 80% transparent white */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    backdrop-filter: blur(5px); /* Add blur for a frosted glass effect */
+
   }
 
   .skill-domain h3 {
