@@ -3,13 +3,13 @@
     <header>
       <h1>My Freelance Business</h1>
       <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#web-development">Web Development</a>
-        <a href="#data-analysis">Data Analysis</a>
-        <a href="#physics">Physics</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" :class="{ active: currentRoute === '#about' }">About</a>
+        <a href="#skills" :class="{ active: currentRoute === '#skills' }">Skills</a>
+        <a href="#web-development" :class="{ active: currentRoute === '#web-development' }">Web Development</a>
+        <a href="#data-analysis" :class="{ active: currentRoute === '#data-analysis' }">Data Analysis</a>
+        <a href="#physics" :class="{ active: currentRoute === '#physics' }">Physics</a>
+        <a href="#testimonials" :class="{ active: currentRoute === '#testimonials' }">Testimonials</a>
+        <a href="#contact" :class="{ active: currentRoute === '#contact' }">Contact</a>
       </nav>
     </header>
 
@@ -20,7 +20,8 @@
 
     <section id="skills" class="rounded-section">
       <h2>Skills</h2>
-      <div class="skill-domain-container">  <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
+      <div class="skill-domain-container">
+        <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
           <h3>{{ domain }}</h3>
           <div class="skills-list">
             <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
@@ -58,7 +59,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="rounded-section">
       <h2>Contact Me</h2>
       <p>Email: your.email@example.com</p>
       <p>LinkedIn: your.linkedin.profile</p>
@@ -72,7 +73,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue'; // Import computed
 import ProjectCard from './components/ProjectCard.vue';
 import loadProjects from './data/projects.js';
 
@@ -91,18 +92,31 @@ export default {
       'Physics': ['MATLAB', 'GNU Radio', 'Antenna Design', 'Simulations'],
     });
 
+    const currentRoute = ref(window.location.hash || '#about'); // Track current route
+
     onMounted(async () => {
       const projects = await loadProjects();
       webDevProjects.value = projects['web-dev'] || [];
       dataAnalysisProjects.value = projects['data-analysis'] || [];
       physicsProjects.value = projects['physics'] || [];
+
+      window.addEventListener('hashchange', () => {
+        currentRoute.value = window.location.hash || '#about';
+      });
     });
 
-    return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials, skillSet };
+    return {
+      webDevProjects,
+      dataAnalysisProjects,
+      physicsProjects,
+      testimonials,
+      skillSet,
+      currentRoute, // Expose currentRoute
+    };
   },
 };
 </script>
 
 <style scoped>
-
+/* ... (Your CSS from the previous responses) ... */
 </style>

@@ -23,33 +23,68 @@ body {
 
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+  background-color: #282c34; /* Darker, more modern background */
+  color: #f0f0f0; /* Lighter text color */
+  padding: 1.5rem 0; /* Increased vertical padding */
   text-align: center;
-  backdrop-filter: blur(50px);
-  background-color: rgba(51, 51, 51, 0.8); /* Slightly less opaque */
+  backdrop-filter: blur(10px); /* Reduced blur for subtler effect */
+  background-color: rgba(40, 44, 52, 0.8); /* Slightly less opaque */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
 
+header:hover {
+  background-color: rgba(40, 44, 52, 0.9); /* Darken slightly on hover */
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif; /* Modern font */
+  font-size: 2.5rem;
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  transition: transform 0.2s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+header h1:hover {
+  transform: scale(1.05); /* Scale up slightly on hover */
+  color: #61dafb; /* Change color on hover (example) */
 }
 
 nav {
   display: flex;
   justify-content: center;
-  padding: 10px; /* Add padding to nav */
+  padding: 10px 0; /* Adjusted padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
 }
 
 nav a {
-  color: white;
-  margin: 0 1rem;
+  color: #f0f0f0;
+  margin: 0 1.5rem; /* Adjusted margin */
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 0.7rem 1.2rem; /* Adjusted padding */
+  border-radius: 8px; /* More rounded corners */
+  font-family: 'Roboto', sans-serif; /* Different font for nav */
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-  background-color: #555;
+  background-color: #61dafb; /* Example hover background color */
+  color: #282c34; /* Darker text color on hover */
+  transform: translateY(-2px); /* Move up slightly on hover */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Add shadow on hover */
+
 }
+
+nav a.active { /* Style for the active/current link (if needed) */
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+/* Add fonts from Google Fonts (in your index.html <head>) */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 section {
   /* No direct styling here, use .rounded-section class */
