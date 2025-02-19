@@ -96,14 +96,19 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-#about {
-  padding: 3rem; /* Increased padding */
-  font-size: 1.1rem; /* Slightly larger font size */
-  line-height: 1.8; /* Improved line height for readability */
+#about { /* Target the about section specifically */
+  min-height: 400px; /* Set a minimum height */
+  display: flex; /* Use flexbox for vertical centering */
+  align-items: center; /* Vertically center content */
+  padding: 4rem 2rem; /* Increased padding for more space */
+  text-align: justify; /* Justify text */
 }
 
 #about p {
-  margin-bottom: 1.5rem; /* Increased margin between paragraphs */
+  font-size: 1.2rem; /* slightly larger font for better readability */
+  line-height: 1.8; /* improved line height for better readability */
+  max-width: 800px; /* Limit paragraph width for better readability */
+  margin: 0 auto; /* Center the paragraph horizontally */
 }
 
 .project-grid {
