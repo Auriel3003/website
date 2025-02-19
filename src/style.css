@@ -152,7 +152,7 @@ section h2 {
   background-image: url("path/to/your/image.jpg"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
-  opacity: 0.3; /* Adjust opacity */
+  opacity: 0.8; /* Adjust opacity */
   filter: blur(5px); /* Adjust blur */
   z-index: -1; /* Place behind the content */
 }
