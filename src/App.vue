@@ -60,41 +60,22 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import ProjectCard from './components/ProjectCard.vue';
+import webDevProjectsData from './data/web-dev.js';
+import dataAnalysisProjectsData from './data/data-analysis.js';
+import physicsProjectsData from './data/physics.js';
+
 
 export default {
   components: {
     ProjectCard,
   },
   setup() {
-    const webDevProjects = ref([]);
-    const dataAnalysisProjects = ref([]);
-    const physicsProjects = ref([]);
+    const webDevProjects = ref(webDevProjectsData);
+    const dataAnalysisProjects = ref(dataAnalysisProjectsData);
+    const physicsProjects = ref(physicsProjectsData);
     const testimonials = ref([ /* Your testimonials here */ ]);
-
-    onMounted(async () => {
-      webDevProjects.value = await loadProjects('web-dev');
-      dataAnalysisProjects.value = await loadProjects('data-analysis');
-      physicsProjects.value = await loadProjects('physics');
-    });
-
-    const loadProjects = async (category) => {
-      try {
-        // Correct way to use import.meta.glob:
-        const modules = import.meta.glob(`../data/${category}/*.json`, { as: 'json' });
-
-        const projects = [];
-        for (const path in modules) {
-          const module = await modules[path]();
-          projects.push(module.default);
-        }
-        return projects;
-      } catch (error) {
-        console.error(`Error loading ${category} projects:`, error);
-        return []; // Return empty array in case of error
-      }
-    };
 
     return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
   },
@@ -103,5 +84,9 @@ export default {
 
 <style scoped>
 /* ... (Your CSS styles) */
-.project-grid { /* ... */ }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
 </style>
