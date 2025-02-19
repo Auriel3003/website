@@ -19,20 +19,21 @@
 
     <section id="web-development">
       <h2>Web Development</h2>
-      <div class="project-grid">  <ProjectCard v-for="project in webDevProjects" :key="project.title" :project="project" />
+      <div class="project-grid">
+        <ProjectCard v-for="project in webDevProjects" :key="project.title" :project="project" />
       </div>
     </section>
 
     <section id="data-analysis">
       <h2>Data Analysis</h2>
-       <div class="project-grid">
+      <div class="project-grid">
         <ProjectCard v-for="project in dataAnalysisProjects" :key="project.title" :project="project" />
       </div>
     </section>
 
     <section id="physics">
       <h2>Physics</h2>
-       <div class="project-grid">
+      <div class="project-grid">
         <ProjectCard v-for="project in physicsProjects" :key="project.title" :project="project" />
       </div>
     </section>
@@ -46,11 +47,10 @@
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: your.linkedin.profile</p>
-        <p>Other Contact Info</p>
-
+      <h2>Contact Me</h2>
+      <p>Email: your.email@example.com</p>
+      <p>LinkedIn: your.linkedin.profile</p>
+      <p>Other Contact Info</p>
     </section>
 
     <footer>
@@ -61,36 +61,40 @@
 
 <script>
 import { ref, onMounted } from 'vue';
-import ProjectCard from './components/ProjectCard.vue'; // Import the component
+import ProjectCard from './components/ProjectCard.vue';
 
 export default {
   components: {
-    ProjectCard, // Register the component
+    ProjectCard,
   },
   setup() {
     const webDevProjects = ref([]);
     const dataAnalysisProjects = ref([]);
     const physicsProjects = ref([]);
-    const testimonials = ref([ /* Your testimonials */ ]);
-
-    const loadProjects = async (category, projectsRef) => {
-        try {
-            const files = import.meta.glob(`../data/${category}/*.json`);
-            const projectPromises = Object.keys(files).map(async (file) => {
-                const module = await files[file]();
-                return module.default;
-            });
-            projectsRef.value = await Promise.all(projectPromises);
-        } catch (error) {
-            console.error("Error loading projects:", error);
-        }
-    };
+    const testimonials = ref([ /* Your testimonials here */ ]);
 
     onMounted(async () => {
-        await loadProjects('web-dev', webDevProjects);
-        await loadProjects('data-analysis', dataAnalysisProjects);
-        await loadProjects('physics', physicsProjects);
+      webDevProjects.value = await loadProjects('web-dev');
+      dataAnalysisProjects.value = await loadProjects('data-analysis');
+      physicsProjects.value = await loadProjects('physics');
     });
+
+    const loadProjects = async (category) => {
+      try {
+        // Correct way to use import.meta.glob:
+        const modules = import.meta.glob(`../data/${category}/*.json`, { as: 'json' });
+
+        const projects = [];
+        for (const path in modules) {
+          const module = await modules[path]();
+          projects.push(module.default);
+        }
+        return projects;
+      } catch (error) {
+        console.error(`Error loading ${category} projects:`, error);
+        return []; // Return empty array in case of error
+      }
+    };
 
     return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
   },
@@ -98,12 +102,6 @@ export default {
 </script>
 
 <style scoped>
-/* Basic styling - customize as needed */
-/* ... (Existing styles) */
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 1rem;
-}
+/* ... (Your CSS styles) */
+.project-grid { /* ... */ }
 </style>
