@@ -13,12 +13,12 @@
       </nav>
     </header>
 
-    <section id="about">
+    <section id="about" class="rounded-section">
       <h2>About Me</h2>
       <p>Write a compelling introduction about yourself, your skills, and what you offer as a freelancer. Highlight your experience and passion for each of your verticals (Web Development, Data Analysis, and Physics). Mention your commitment to delivering high-quality work and client satisfaction.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="rounded-section">
       <h2>Skills</h2>
       <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
         <h3>{{ domain }}</h3>
@@ -28,28 +28,28 @@
       </div>
     </section>
 
-    <section id="web-development">
+    <section id="web-development" class="rounded-section">
       <h2>Web Development</h2>
       <div class="project-grid">
         <ProjectCard v-for="project in webDevProjects" :key="project.title" :project="project" />
       </div>
     </section>
 
-    <section id="data-analysis">
+    <section id="data-analysis" class="rounded-section">
       <h2>Data Analysis</h2>
       <div class="project-grid">
         <ProjectCard v-for="project in dataAnalysisProjects" :key="project.title" :project="project" />
       </div>
     </section>
 
-    <section id="physics">
+    <section id="physics" class="rounded-section">
       <h2>Physics</h2>
       <div class="project-grid">
         <ProjectCard v-for="project in physicsProjects" :key="project.title" :project="project" />
       </div>
     </section>
 
-    <section id="testimonials">
+    <section id="testimonials" class="rounded-section">
       <h2>Testimonials</h2>
       <div v-for="testimonial in testimonials" :key="testimonial.id">
         <p>"{{ testimonial.quote }}"</p>
