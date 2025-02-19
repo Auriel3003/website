@@ -3,7 +3,10 @@ body {
   font-family: sans-serif;
   margin: 0;
   line-height: 1.6;
-  background-color: #f8f8f8; /* Light background for contrast */
+  background-image: url("https://images.unsplash.com/photo-1554034483-04fda0d3507b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww"); /* Replace with your image path */
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent image tiling */
+  background-attachment: fixed; /* Keep the image fixed during scroll */
 }
 
 /* Circular border and blur effect */
