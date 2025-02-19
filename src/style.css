@@ -14,7 +14,7 @@ body {
   border-radius: 20px; /* Adjust radius for desired roundness */
   overflow: hidden; /* Hide content that overflows the rounded corners */
   backdrop-filter: blur(10px); /* Apply blur to the background behind the border */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white background */
   padding: 2rem; /* Keep padding inside the rounded section */
   margin: 20px auto; /* Center sections and add some margin */
   max-width: 90%; /* Limit section width for responsiveness */
