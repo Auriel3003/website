@@ -7,14 +7,14 @@
         <a href="#web-development">Web Development</a>
         <a href="#data-analysis">Data Analysis</a>
         <a href="#physics">Physics</a>
-        <a href="#skills">Skills</a>  <a href="#testimonials">Testimonials</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Write a compelling introduction...</p>
+      <p>Write a compelling introduction about yourself, your skills, and what you offer as a freelancer. Highlight your experience and passion for each of your verticals (Web Development, Data Analysis, and Physics). Mention your commitment to delivering high-quality work and client satisfaction.</p>
     </section>
 
     <section id="web-development">
@@ -38,54 +38,11 @@
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <div class="skill-category">
-          <h3 class="font-bold mb-2">Programming Languages</h3>
-          <div class="badge-container">
-            <span v-for="skill in programmingLanguages" :key="skill" class="badge">{{ skill }}</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="font-bold mb-2">Embedded Platforms</h3>
-          <div class="badge-container">
-            <span v-for="skill in embeddedPlatforms" :key="skill" class="badge">{{ skill }}</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="font-bold mb-2">Electronics & Telecommunications</h3>
-          <div class="badge-container">
-            <span v-for="skill in electronicsAndTelecom" :key="skill" class="badge">{{ skill }}</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="font-bold mb-2">DevOps</h3>
-          <div class="badge-container">
-            <span v-for="skill in devOps" :key="skill" class="badge">{{ skill }}</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="font-bold mb-2">Web Development</h3>
-          <div class="badge-container">
-            <span v-for="skill in webDevelopment" :key="skill" class="badge">{{ skill }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <section id="testimonials">
       <h2>Testimonials</h2>
-      <div class="testimonial-list">
-        <div v-for="testimonial in testimonials" :key="testimonial.id" class="testimonial-item">
-          <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
-          <p class="testimonial-author">- {{ testimonial.author }}</p>
-        </div>
+      <div v-for="testimonial in testimonials" :key="testimonial.id">
+        <p>"{{ testimonial.quote }}"</p>
+        <p>- {{ testimonial.author }}</p>
       </div>
     </section>
 
@@ -103,9 +60,9 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue'; // Import onMounted
 import ProjectCard from './components/ProjectCard.vue';
-import loadProjects from './data/projects.js';
+import loadProjects from './data/projects.js'; // Import the function
 
 export default {
   components: {
@@ -115,35 +72,19 @@ export default {
     const webDevProjects = ref([]);
     const dataAnalysisProjects = ref([]);
     const physicsProjects = ref([]);
-    const testimonials = ref([
-      { id: 1, quote: 'Great work!', author: 'Client A' },
-      // ... more testimonials
-    ]);
+    const testimonials = ref([ /* Your testimonials */ ]);
 
-    const programmingLanguages = ref(['C', 'Python', 'Java']);
-    const embeddedPlatforms = ref(['ESP', 'Arduino', 'Raspberry Pi', 'SBCs']);
-    const electronicsAndTelecom = ref(['Analog Communication', 'Signal and Systems', 'Computer Architecture']);
-    const devOps = ref(['Git', 'Docker', 'Kubernetes', 'GCP', 'Vercel', 'Linux']);
-    const webDevelopment = ref(['ReactJS', 'NodeJS', 'MongoDB', 'Vite']);
-
-    onMounted(async () => {
+    onMounted(async () => { // Use onMounted to call the async function
       const projects = await loadProjects();
       webDevProjects.value = projects['web-dev'] || [];
       dataAnalysisProjects.value = projects['data-analysis'] || [];
       physicsProjects.value = projects['physics'] || [];
     });
 
-    return {
-      webDevProjects,
-      dataAnalysisProjects,
-      physicsProjects,
-      testimonials,
-      programmingLanguages,
-      embeddedPlatforms,
-      electronicsAndTelecom,
-      devOps,
-      webDevelopment,
-    };
+    return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
   },
 };
 </script>
+
+<style scoped>
+</style>
