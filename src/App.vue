@@ -4,6 +4,7 @@
       <h1>My Freelance Business</h1>
       <nav>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#web-development">Web Development</a>
         <a href="#data-analysis">Data Analysis</a>
         <a href="#physics">Physics</a>
@@ -15,6 +16,16 @@
     <section id="about">
       <h2>About Me</h2>
       <p>Write a compelling introduction about yourself, your skills, and what you offer as a freelancer. Highlight your experience and passion for each of your verticals (Web Development, Data Analysis, and Physics). Mention your commitment to delivering high-quality work and client satisfaction.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
+        <h3>{{ domain }}</h3>
+        <div class="skills-list">
+          <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
+        </div>
+      </div>
     </section>
 
     <section id="web-development">
@@ -60,9 +71,9 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'; // Import onMounted
+import { ref, onMounted } from 'vue';
 import ProjectCard from './components/ProjectCard.vue';
-import loadProjects from './data/projects.js'; // Import the function
+import loadProjects from './data/projects.js';
 
 export default {
   components: {
@@ -72,19 +83,25 @@ export default {
     const webDevProjects = ref([]);
     const dataAnalysisProjects = ref([]);
     const physicsProjects = ref([]);
-    const testimonials = ref([ /* Your testimonials */ ]);
+    const testimonials = ref([]);
+    const skillSet = ref({
+      'Web Development': ['Vue.js', 'React', 'Node.js', 'JavaScript', 'CSS', 'Tailwind CSS'],
+      'Data Analysis': ['Python', 'Pandas', 'NumPy', 'SQL', 'Tableau'],
+      'Physics': ['MATLAB', 'GNU Radio', 'Antenna Design', 'Simulations'],
+    });
 
-    onMounted(async () => { // Use onMounted to call the async function
+    onMounted(async () => {
       const projects = await loadProjects();
       webDevProjects.value = projects['web-dev'] || [];
       dataAnalysisProjects.value = projects['data-analysis'] || [];
       physicsProjects.value = projects['physics'] || [];
     });
 
-    return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
+    return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials, skillSet };
   },
 };
 </script>
 
 <style scoped>
+
 </style>
