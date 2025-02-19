@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue'; // Import onMounted
 import ProjectCard from './components/ProjectCard.vue';
 import loadProjects from './data/projects.js'; // Import the function
 
@@ -69,13 +69,17 @@ export default {
     ProjectCard,
   },
   setup() {
-    const webDevProjects = ref(projectsByCategory['web-dev'] || []); // Provide default empty array
-    const dataAnalysisProjects = ref(projectsByCategory['data-analysis'] || []); // Provide default empty array
-    const physicsProjects = ref(projectsByCategory['physics'] || []); // Provide default empty array
-    const testimonials = ref([
-      { id: 1, quote: 'Great work!', author: 'Client A' },
-      // ... more testimonials
-    ]);
+    const webDevProjects = ref([]);
+    const dataAnalysisProjects = ref([]);
+    const physicsProjects = ref([]);
+    const testimonials = ref([ /* Your testimonials */ ]);
+
+    onMounted(async () => { // Use onMounted to call the async function
+      const projects = await loadProjects();
+      webDevProjects.value = projects['web-dev'] || [];
+      dataAnalysisProjects.value = projects['data-analysis'] || [];
+      physicsProjects.value = projects['physics'] || [];
+    });
 
     return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
   },
