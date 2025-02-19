@@ -13,16 +13,10 @@
       </nav>
     </header>
 
-    <section id="about" class="rounded-section">
-      <h2>About Me</h2>
-      <p>Write a compelling introduction about yourself, your skills, and what you offer as a freelancer. Highlight your experience and passion for each of your verticals (Web Development, Data Analysis, and Physics). Mention your commitment to delivering high-quality work and client satisfaction.</p>
-    </section>
 
     <section id="about" class="rounded-section">
       <h2>About Me</h2>
       <div class="about-content">
-        <div class="profile-image">
-          <img src="https://camo.githubusercontent.com/8e09105292eb650f1007af790c36b80b7630a82a98725d9439af599ca423f92d/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a313335382f302a796761486d506a516e566d45417064542e676966" alt="Sahil Sawant" class="profile-pic"> </div>
         <div class="profile-text">
           <h3>Sahil Sawant</h3>
           <p class="tagline">Physics Enthusiast & Freelance Developer Specializing in Data Analysis and Web Solutions</p>
