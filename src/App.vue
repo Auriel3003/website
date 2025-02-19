@@ -62,7 +62,7 @@
 <script>
 import { ref } from 'vue';
 import ProjectCard from './components/ProjectCard.vue';
-import projectsByCategory from './data/projects.js';
+import loadProjects from './data/projects.js'; // Import the function
 
 export default {
   components: {
