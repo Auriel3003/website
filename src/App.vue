@@ -14,7 +14,7 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Write a compelling introduction...</p>
+      <p>Write a compelling introduction about yourself, your skills, and what you offer as a freelancer. Highlight your experience and passion for each of your verticals (Web Development, Data Analysis, and Physics). Mention your commitment to delivering high-quality work and client satisfaction.</p>
     </section>
 
     <section id="web-development">
@@ -62,20 +62,20 @@
 <script>
 import { ref } from 'vue';
 import ProjectCard from './components/ProjectCard.vue';
-import webDevProjectsData from './data/web-dev.js';
-import dataAnalysisProjectsData from './data/data-analysis.js';
-import physicsProjectsData from './data/physics.js';
-
+import projectsByCategory from './data/projects.js';
 
 export default {
   components: {
     ProjectCard,
   },
   setup() {
-    const webDevProjects = ref(webDevProjectsData);
-    const dataAnalysisProjects = ref(dataAnalysisProjectsData);
-    const physicsProjects = ref(physicsProjectsData);
-    const testimonials = ref([ /* Your testimonials here */ ]);
+    const webDevProjects = ref(projectsByCategory['web-dev'] || []); // Provide default empty array
+    const dataAnalysisProjects = ref(projectsByCategory['data-analysis'] || []); // Provide default empty array
+    const physicsProjects = ref(projectsByCategory['physics'] || []); // Provide default empty array
+    const testimonials = ref([
+      { id: 1, quote: 'Great work!', author: 'Client A' },
+      // ... more testimonials
+    ]);
 
     return { webDevProjects, dataAnalysisProjects, physicsProjects, testimonials };
   },
@@ -83,10 +83,35 @@ export default {
 </script>
 
 <style scoped>
-/* ... (Your CSS styles) */
+/* Basic styling - customize as needed */
+header {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 1rem;
+}
+
+section {
+  padding: 2rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0; /* Sticky footer */
+  width: 100%;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
+
 </style>
