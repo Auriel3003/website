@@ -20,10 +20,11 @@
 
     <section id="skills" class="rounded-section">
       <h2>Skills</h2>
-      <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
-        <h3>{{ domain }}</h3>
-        <div class="skills-list">
-          <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
+      <div class="skill-domain-container">  <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain">
+          <h3>{{ domain }}</h3>
+          <div class="skills-list">
+            <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
+          </div>
         </div>
       </div>
     </section>
