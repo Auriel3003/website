@@ -87,35 +87,4 @@ export default {
 </script>
 
 <style scoped>
-/* Basic styling - customize as needed */
-header {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 1rem;
-}
-
-section {
-  padding: 2rem;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0; /* Sticky footer */
-  width: 100%;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-}
-
 </style>
