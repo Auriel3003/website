@@ -14,56 +14,12 @@
     </header>
 
 
-    <section id="about" class="rounded-section">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <div class="profile-text">
-          <h3>Sahil Sawant</h3>
-          <p class="tagline">Physics Enthusiast & Freelance Developer Specializing in Data Analysis and Web Solutions</p>
-
-          <p>I'm a passionate individual with a unique blend of expertise in physics and software development. My fascination with the intricacies of the universe drives me to explore complex physics concepts and share them in an accessible way. I'm currently developing resources and tutorials to make physics more understandable and engaging for everyone.</p>
-
-          <p>Beyond my physics pursuits, I'm a skilled freelance developer offering services in data analysis and web development. I'm committed to delivering high-quality solutions tailored to meet the specific needs of my clients.</p>
-
-          <div class="skills-overview">
-            <h4>Data Analysis</h4>
-            <div class="skill-badges">
-              <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
-              <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
-              <img src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black" alt="Matplotlib">
-              <img src="https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly">
-              <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn">
-              <img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="TensorFlow">
-              <img src="https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white" alt="Keras">
-            </div>
-
-            <h4>Web Development</h4>
-            <div class="skill-badges">
-              <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React">
-              <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
-              <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
-              <img src="https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D" alt="Vue.js">
-              <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-              <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
-              <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
-              <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7" alt="Netlify">
-              <img src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages">
-              <img src="https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud">
-              <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-            </div>
-          </div>
-
-          <p>Currently, I'm focused on [briefly mention your current project - e.g., developing a physics education platform, building a data analysis tool, etc.].</p>
-
-          <div class="contact-me">
-            <h4>Let's Connect</h4>
-            <ul class="contact-links">
-              <li><a href="your_instagram_link"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="Instagram"></a></li>
-              <li><a href="your_linkedin_link"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a></li>
-              <li><a href="mailto:your_email@example.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a></li>
-              <li><a href="your_kaggle_link"><img src="https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle"></a></li>
-              <li><a href="your_medium_link"><img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium"></a></li>
-            </ul>
+    <section id="about" class="main-slider-1 banner-overlay" :style="{ backgroundImage: `url('path/to/your/image.jpg')` }">
+      <div class="container">
+        <div class="text-center">
+          <div class="slider-banner-info text-center">
+            <h2 class="slider-banner-title">Hello, I’m <b>Sahil Sawant</b></h2>
+            <h5 class="slider-banner-text">Physics Enthusiast & Freelance Developer</h5>
           </div>
         </div>
       </div>

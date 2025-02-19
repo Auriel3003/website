@@ -96,58 +96,54 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-#about {
-  min-height: 500px; /* Adjust as needed */
-  display: flex;
+.main-slider-1 {
   align-items: center;
-  padding: 4rem 2rem;
-  text-align: left; /* Align text to the left */
-}
-
-.about-content {
+  background-position: center; /* or 50% */
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
-  align-items: flex-start; /* Align items to the top */
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  height: 800px; /* Adjust as needed */
+  position: relative; /* For overlay */
+  color: white; /* Default text color */
 }
 
-.profile-image {
-  width: 250px; /* Adjust profile image width */
-  margin-right: 2rem; /* Add some space to the right of the image */
-  flex-shrink: 0; /* Prevent image from shrinking */
-}
-
-.profile-pic {
+.banner-overlay:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 50%; /* Make it circular */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-  display: block; /* Prevents image from creating extra space */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay opacity */
+  pointer-events: none; /* Allow clicks to pass through */
 }
 
-.profile-text {
-  flex-grow: 1; /* Allow text to take up available space */
+.container { /* You might already have container styles */
+    max-width: 1200px; /* Or your preferred container width */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.profile-text h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+.text-center {
+    text-align: center;
 }
 
-.tagline {
-  font-style: italic;
-  color: #777;
-  margin-bottom: 1rem;
+.slider-banner-info {
+    /* Styles for your text content */
+    position: relative; /* Bring text above overlay */
+    z-index: 1; /* Ensure text is above overlay */
 }
 
-.skills-overview {
-  margin-top: 2rem;
+.slider-banner-title {
+    font-size: 3rem;  /* Example size */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif; /* Example font */
 }
 
-.skills-overview h4 {
-  font-size: 
+.slider-banner-text {
+    font-size: 1.5rem; /* Example size */
+    font-family: 'Roboto', sans-serif;
 }
 
 .project-grid {
