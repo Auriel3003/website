@@ -113,6 +113,20 @@ export default {
       'Physics': ['MATLAB', 'GNU Radio', 'Antenna Design', 'Simulations'],
     });
 
+    const skillDomain = ref(null); // Ref for the skill domain element
+    const isVisible = ref(false); // Visibility state
+
+    const { isIntersecting } = useIntersectionObserver(
+      skillDomain,
+      {
+        threshold: 0.5, // Trigger when 50% visible
+      },
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          isVisible.value = true;
+        }
+      }
+
     const currentRoute = ref(window.location.hash || '#about');
 
     onMounted(async () => {
