@@ -171,71 +171,59 @@ section h2 {
   margin: 10px auto;
 }
 
-.skill-domain-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+  .skill-domain-container {  /* New container for the domains */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the domains horizontally */
+    gap: 20px; /* Spacing between domain cards */
+  }
 
-.skill-domain {
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7); /* Slightly less opaque */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px); /* Frosty effect */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease; /* Smooth fade-in */
-}
+  .skill-domain {
+    width: calc(33.33% - 20px); /* 3 domains per row with spacing; Adjust 20px if gap changes*/
+    box-sizing: border-box; /* Include padding and border in width */
+    border: 1px solid rgba(204, 204, 204, 0.5); 
+    padding: 20px; /* Add padding to domain card */
+    border-radius: 10px; /* Round the corners of domain card */
+    text-align: center; /* Center the domain name */
+    background-color: rgba(255, 255, 255, 0.2); /* 80% transparent white */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    backdrop-filter: blur(5px); /* Add blur for a frosted glass effect */
 
-.skill-domain.animate__animated { /* Target animated elements */
-  opacity: 1; /* Visible when animated */
-}
+  }
 
-.skill-domain h3 {
-  margin-bottom: 10px;
-}
+  .skill-domain h3 {
+    margin-bottom: 10px;
+  }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the skills within the domain card */
+    gap: 10px;
+  }
 
-.skill-tag {
-  background-color: #f0f0f0;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover transitions */
-}
-
-.skill-tag:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-}
+  .skill-tag {
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+  }
 
 /* Responsive adjustments (optional) */
-@media (max-width: 900px) {
+@media (max-width: 900px) { /* Adjust breakpoint as needed */
   .skill-domain {
-    width: calc(50% - 20px);
+    width: calc(50% - 20px); /* 2 domains per row on smaller screens */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Adjust breakpoint as needed */
   .skill-domain {
-    width: 100%;
+    width: 100%; /* 1 domain per row on very small screens */
   }
 }
-
 
 .testimonial-list {
     display: flex;

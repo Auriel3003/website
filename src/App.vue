@@ -25,18 +25,18 @@
     </section>
 
     <section id="skills" class="rounded-section">
-      <h2>Skills</h2>
-      <div class="skill-domain-container">
-        <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain"
-            :class="{ 'animate__animated animate__fadeInUp': isVisible }"
-            ref="skillDomain">
-          <h3>{{ domain }}</h3>
-          <div class="skills-list">
-            <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
-          </div>
+    <h2>Skills</h2>
+    <div class="skill-domain-container">
+      <div v-for="(skills, domain) in skillSet" :key="domain" class="skill-domain"
+           :class="{ 'animate__animated animate__fadeInUp': isVisible }"
+           ref="skillDomain">
+        <h3>{{ domain }}</h3>
+        <div class="skills-list">
+          <span v-for="skill in skills" :key="skill" class="skill-tag">{{ skill }}</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section id="web-development" class="rounded-section">
       <h2>Web Development</h2>
@@ -112,20 +112,6 @@ export default {
       'Data Analysis': ['Python', 'Pandas', 'NumPy', 'SQL', 'Tableau'],
       'Physics': ['MATLAB', 'GNU Radio', 'Antenna Design', 'Simulations'],
     });
-
-    const skillDomain = ref(null); // Ref for the skill domain element
-    const isVisible = ref(false); // Visibility state
-
-    const { isIntersecting } = useIntersectionObserver(
-      skillDomain,
-      {
-        threshold: 0.5, // Trigger when 50% visible
-      },
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible.value = true;
-        }
-      }
 
     const currentRoute = ref(window.location.hash || '#about');
 
